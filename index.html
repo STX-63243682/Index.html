@@ -33,6 +33,7 @@
     overflow-x: hidden;
   }
 
+  /* ========== BACKGROUND WAVES ========== */
   .bg-waves {
     position: fixed;
     inset: 0;
@@ -47,9 +48,10 @@
     content: '';
     position: absolute;
     inset: -50%;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='800'%3E%3Cpath d='M0,400 Q200,200 400,400 T800,400' fill='none' stroke='rgba(255,255,255,0.03)' stroke-width='80'/%3E%3Cpath d='M0,300 Q200,100 400,300 T800,300' fill='none' stroke='rgba(255,255,255,0.025)' stroke-width='60'/%3E%3Cpath d='M0,500 Q200,300 400,500 T800,500' fill='none' stroke='rgba(255,255,255,0.02)' stroke-width='100'/%3E%3C/svg%3E") center/cover;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='800'%3E%3Cpath d='M0,400 Q200,200 400,400 T800,400' fill='none' stroke='rgba(255,255,255,0.03)' stroke-width='80'/%3E%3Cpath d='M0,300 Q200,100 400,300 T800,300' fill='none' stroke='rgba(255,255,255,0.025)' stroke-width='60'/%3E%3Cpath d='M0,500 Q200,300 400,500 T800,500' fill='none' stroke='rgba(255,255,255,0.02)' stroke-width='100'/%3E%3Cpath d='M0,200 Q300,400 500,200 T800,200' fill='none' stroke='rgba(255,255,255,0.015)' stroke-width='70'/%3E%3Cpath d='M0,600 Q300,400 500,600 T800,600' fill='none' stroke='rgba(255,255,255,0.02)' stroke-width='90'/%3E%3C/svg%3E") center/cover;
   }
 
+  /* ========== PAGES ========== */
   .page {
     display: none;
     position: relative;
@@ -60,6 +62,7 @@
   }
   .page.active { display: flex; flex-direction: column; }
 
+  /* ========== TOP NAV BAR ========== */
   .top-bar {
     display: flex;
     align-items: center;
@@ -78,10 +81,28 @@
     border-radius: 50%;
     border: none;
   }
-  .top-bar .page-title { font-size: 17px; font-weight: 600; color: var(--white); }
+  .top-bar .page-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--white);
+  }
   .top-bar .page-title.yellow { color: var(--yellow); }
-  .top-bar .lang-btn { color: var(--white); font-size: 14px; background: none; border: none; cursor: pointer; }
+  .top-bar .lang-btn {
+    color: var(--white);
+    font-size: 14px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .top-bar .right-action {
+    color: var(--white);
+    font-size: 13px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
 
+  /* ========== BOTTOM NAV ========== */
   .bottom-nav {
     position: fixed;
     bottom: 0;
@@ -121,6 +142,7 @@
     box-shadow: 0 4px 15px rgba(255,200,0,0.4);
   }
 
+  /* ========== SCROLLABLE CONTENT ========== */
   .scroll-content {
     flex: 1;
     overflow-y: auto;
@@ -129,6 +151,7 @@
   }
   .scroll-content::-webkit-scrollbar { display: none; }
 
+  /* ========== STX LOGO ========== */
   .stx-logo {
     display: flex;
     flex-direction: column;
@@ -147,83 +170,140 @@
     border: 1px solid rgba(100,150,255,0.2);
   }
   .stx-logo .logo-text {
-    font-size: 38px; font-weight: 900; letter-spacing: 2px;
+    font-size: 38px;
+    font-weight: 900;
+    letter-spacing: 2px;
     background: linear-gradient(180deg, #fff 0%, #a0c4ff 40%, #4080ff 100%);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
     line-height: 1;
   }
-  .stx-logo .logo-sub { font-size: 10px; letter-spacing: 6px; color: rgba(160,200,255,0.8); margin-top: 2px; }
+  .stx-logo .logo-sub {
+    font-size: 10px;
+    letter-spacing: 6px;
+    color: rgba(160,200,255,0.8);
+    margin-top: 2px;
+  }
 
+  /* ========== FORM ELEMENTS ========== */
   .form-wrap { padding: 0 20px; }
   .input-group {
     background: rgba(255,255,255,0.06);
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 50px;
-    display: flex; align-items: center;
+    display: flex;
+    align-items: center;
     padding: 14px 18px;
     margin-bottom: 14px;
     gap: 10px;
   }
   .input-group svg { color: var(--gray); flex-shrink: 0; width: 20px; height: 20px; }
   .input-group .prefix {
-    color: var(--white); font-size: 15px; white-space: nowrap;
+    color: var(--white);
+    font-size: 15px;
+    white-space: nowrap;
     display: flex; align-items: center; gap: 6px;
     border-right: 1px solid rgba(255,255,255,0.15);
     padding-right: 10px;
   }
-  .input-group input { flex: 1; background: none; border: none; outline: none; color: var(--white); font-size: 15px; }
+  .input-group input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--white);
+    font-size: 15px;
+  }
   .input-group input::placeholder { color: var(--gray); }
-  .input-group .eye-btn { background: none; border: none; color: var(--gray); cursor: pointer; }
+  .input-group .eye-btn {
+    background: none; border: none; color: var(--gray); cursor: pointer;
+  }
   .remember-row {
     display: flex; align-items: center; gap: 8px;
-    padding: 0 4px; margin-bottom: 20px;
+    padding: 0 4px;
+    margin-bottom: 20px;
   }
   .remember-row .circle-check {
     width: 20px; height: 20px;
     border: 2px solid var(--gray2);
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    cursor: pointer; flex-shrink: 0;
+    cursor: pointer;
+    flex-shrink: 0;
   }
   .remember-row .circle-check.checked { border-color: var(--blue); background: var(--blue); }
   .remember-row span { color: var(--gray); font-size: 14px; }
 
   .btn-primary {
-    width: 100%; padding: 17px; border: none; border-radius: 50px;
+    width: 100%;
+    padding: 17px;
+    border: none;
+    border-radius: 50px;
     background: linear-gradient(135deg, var(--blue), #7b5ea7);
-    color: var(--white); font-size: 17px; font-weight: 600;
-    cursor: pointer; margin-bottom: 14px;
+    color: var(--white);
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 14px;
+    letter-spacing: 0.3px;
   }
   .btn-secondary {
-    width: 100%; padding: 17px;
+    width: 100%;
+    padding: 17px;
     border: 2px solid rgba(255,255,255,0.2);
     border-radius: 50px;
     background: rgba(255,255,255,0.95);
-    color: #222; font-size: 17px; font-weight: 600;
-    cursor: pointer; margin-bottom: 14px;
+    color: #222;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 14px;
   }
   .btn-yellow {
-    width: 100%; padding: 17px; border: none; border-radius: 50px;
+    width: 100%;
+    padding: 17px;
+    border: none;
+    border-radius: 50px;
     background: linear-gradient(135deg, var(--yellow), var(--yellow2));
-    color: #000; font-size: 17px; font-weight: 700;
-    cursor: pointer; margin-bottom: 14px;
+    color: #000;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 14px;
   }
-  .link-row { text-align: center; color: var(--gray); font-size: 14px; margin-top: 8px; }
-  .link-row a, .link-row span.link { color: var(--blue); text-decoration: none; cursor: pointer; }
+  .link-row {
+    text-align: center;
+    color: var(--gray);
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  .link-row a, .link-row span.link {
+    color: var(--blue);
+    text-decoration: none;
+    cursor: pointer;
+  }
 
-  /* HOME */
+  /* ========== HOME PAGE ========== */
   .home-header {
-    display: flex; align-items: center; justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 16px 18px;
   }
   .home-logo {
     height: 36px;
     background: linear-gradient(135deg, #0d1a2e, #1a2a4a);
-    border-radius: 8px; padding: 4px 10px;
+    border-radius: 8px;
+    padding: 4px 10px;
     display: flex; align-items: center; gap: 4px;
     border: 1px solid rgba(100,150,255,0.2);
   }
-  .home-logo .hl-text { font-size: 16px; font-weight: 900; letter-spacing: 1px; background: linear-gradient(180deg, #fff, #4080ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .home-logo .hl-text {
+    font-size: 16px; font-weight: 900; letter-spacing: 1px;
+    background: linear-gradient(180deg, #fff, #4080ff);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
   .home-logo .hl-sub { font-size: 7px; letter-spacing: 3px; color: rgba(160,200,255,0.7); }
   .chat-btn {
     width: 40px; height: 40px;
@@ -232,98 +312,131 @@
     display: flex; align-items: center; justify-content: center;
     cursor: pointer; position: relative; border: none; color: white;
   }
-  .chat-btn .red-dot { position: absolute; top: 6px; right: 6px; width: 8px; height: 8px; background: red; border-radius: 50%; }
+  .chat-btn .red-dot {
+    position: absolute; top: 6px; right: 6px;
+    width: 8px; height: 8px; background: red; border-radius: 50%;
+  }
 
   /* Banner Slider */
-  .banner-slider { margin: 0 0 16px; position: relative; overflow: hidden; height: 220px; }
+  .banner-slider {
+    margin: 0 0 16px;
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+  }
   .banner-slide {
     position: absolute; inset: 0;
-    opacity: 0; transition: opacity 0.6s ease;
+    opacity: 0; transition: opacity 0.5s;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    display: flex; align-items: center; justify-content: center;
     overflow: hidden;
   }
   .banner-slide.active { opacity: 1; }
-  .banner-slide img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  .banner-slide img { width: 100%; height: 100%; object-fit: cover; }
   .banner-slide .slide-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5));
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6));
   }
-
-  /* Banner dots */
-  .banner-dots {
-    position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);
-    display: flex; gap: 6px; z-index: 5;
-  }
-  .banner-dot {
-    width: 6px; height: 6px; border-radius: 3px;
-    background: rgba(255,255,255,0.4);
-    transition: all 0.3s;
-  }
-  .banner-dot.active { background: var(--yellow); width: 18px; }
 
   /* Announcement */
   .announcement {
-    display: flex; align-items: center; gap: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     padding: 10px 16px;
     background: rgba(255,255,255,0.04);
     margin: 0 14px 16px;
     border-radius: 10px;
     overflow: hidden;
   }
-  .announcement .speaker { font-size: 18px; flex-shrink: 0; color: var(--yellow); }
-  .announcement .ticker-wrap { flex: 1; overflow: hidden; position: relative; }
+  .announcement .speaker {
+    font-size: 18px; flex-shrink: 0; color: var(--yellow);
+  }
+  .announcement .ticker-wrap {
+    flex: 1; overflow: hidden;
+  }
   .announcement .ticker-text {
     white-space: nowrap;
     font-size: 13px;
     color: var(--white);
+    animation: ticker 18s linear infinite;
     display: inline-block;
-    animation: ticker 30s linear infinite;
   }
   @keyframes ticker {
-    0% { transform: translateX(100vw); }
+    0% { transform: translateX(100%); }
     100% { transform: translateX(-100%); }
   }
 
-  /* Action Grid */
+  /* Quick Action Grid */
   .action-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 12px; padding: 0 14px 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 0 14px 16px;
   }
   .action-card {
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 16px; padding: 18px 14px;
+    border-radius: 16px;
+    padding: 18px 14px;
     display: flex; align-items: center; gap: 12px;
     cursor: pointer;
   }
   .action-card .icon-circle {
-    width: 46px; height: 46px; border-radius: 50%;
+    width: 46px; height: 46px;
+    border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    font-size: 22px; flex-shrink: 0;
+    font-size: 22px;
+    flex-shrink: 0;
     background: linear-gradient(135deg, rgba(255,200,0,0.2), rgba(255,150,0,0.2));
     border: 1px solid rgba(255,200,0,0.2);
   }
-  .action-card span { font-size: 14px; font-weight: 500; color: var(--white); }
-
-  .gift-section { padding: 0 14px 16px; display: flex; gap: 12px; overflow-x: auto; }
-  .gift-section::-webkit-scrollbar { display: none; }
-  .gift-item {
-    flex-shrink: 0; width: 80px; height: 80px;
-    background: rgba(255,255,255,0.06); border-radius: 16px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 36px; border: 1px solid rgba(255,255,255,0.08);
+  .action-card span {
+    font-size: 14px; font-weight: 500; color: var(--white);
   }
 
-  /* TASK */
-  .task-header { padding: 16px 16px 10px; font-size: 22px; font-weight: 700; color: var(--white); }
-  .task-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 0 14px; }
+  /* Gift Section */
+  .gift-section {
+    padding: 0 14px 16px;
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+  }
+  .gift-section::-webkit-scrollbar { display: none; }
+  .gift-item {
+    flex-shrink: 0;
+    width: 80px; height: 80px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 36px;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  /* ========== TASK HALL ========== */
+  .task-header {
+    padding: 16px 16px 10px;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+  }
+  .task-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 0 14px;
+  }
   .task-card {
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 16px; overflow: hidden; position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
   }
   .task-card .badge {
     position: absolute; top: 10px; left: 10px;
-    background: var(--orange); color: white; font-size: 11px; font-weight: 700;
+    background: var(--orange);
+    color: white; font-size: 11px; font-weight: 700;
     padding: 4px 10px; border-radius: 20px; z-index: 2;
   }
   .task-card .movie-img {
@@ -333,41 +446,73 @@
     font-size: 40px; color: rgba(255,255,255,0.2);
   }
   .task-card .card-bottom {
-    padding: 10px; display: flex; align-items: center; justify-content: space-between;
+    padding: 10px;
+    display: flex; align-items: center; justify-content: space-between;
     background: rgba(0,0,0,0.4);
   }
-  .task-card .etb-price { font-size: 13px; font-weight: 700; color: var(--white); line-height: 1.2; }
+  .task-card .etb-price {
+    font-size: 13px; font-weight: 700; color: var(--white);
+    line-height: 1.2;
+  }
   .task-card .watch-btn {
     background: linear-gradient(135deg, #00c853, #00a041);
     color: white; border: none; border-radius: 20px;
     padding: 7px 14px; font-size: 12px; font-weight: 600;
-    cursor: pointer;
+    cursor: pointer; display: flex; align-items: center; gap: 5px;
   }
 
-  /* VIP */
-  .vip-title { text-align: center; font-size: 24px; font-weight: 800; padding: 20px 16px 16px; color: var(--yellow); }
+  /* ========== VIP PACKAGES ========== */
+  .vip-title {
+    text-align: center;
+    font-size: 24px; font-weight: 800;
+    padding: 20px 16px 16px;
+    color: var(--yellow);
+  }
   .vip-current-card {
     margin: 0 14px 16px;
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,200,0,0.15);
-    border-radius: 20px; padding: 20px; position: relative; overflow: hidden;
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .vip-current-card::after {
+    content: '';
+    position: absolute; top: -30px; right: -30px;
+    width: 120px; height: 120px;
+    background: radial-gradient(circle, rgba(255,180,0,0.08), transparent);
+    border-radius: 50%;
   }
   .vip-current-card .identity { font-size: 18px; font-weight: 700; color: var(--white); }
   .vip-current-card .detail { color: var(--gray); font-size: 13px; margin-top: 6px; }
   .vip-current-card .detail span { color: var(--white); }
-  .vip-card { margin: 0 14px 12px; border-radius: 20px; padding: 22px 20px; position: relative; overflow: hidden; }
+
+  .vip-card {
+    margin: 0 14px 12px;
+    border-radius: 20px;
+    padding: 22px 20px;
+    position: relative;
+    overflow: hidden;
+  }
   .vip-card .vip-name { font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
   .vip-card .vip-detail { font-size: 13px; color: rgba(255,255,255,0.8); margin-bottom: 4px; }
   .vip-card .buy-btn {
-    margin-top: 14px; background: rgba(0,180,255,0.9);
+    margin-top: 14px;
+    background: rgba(0,180,255,0.9);
     color: white; border: none; border-radius: 20px;
-    padding: 9px 22px; font-size: 14px; font-weight: 600; cursor: pointer;
+    padding: 9px 22px; font-size: 14px; font-weight: 600;
+    cursor: pointer;
   }
   .vip-card .active-pkg-btn {
-    margin-top: 14px; background: rgba(255,255,255,0.2);
+    margin-top: 14px;
+    background: rgba(255,255,255,0.2);
     color: var(--cyan); border: none; border-radius: 20px;
-    padding: 9px 22px; font-size: 14px; font-weight: 600; width: 100%; cursor: default;
+    padding: 9px 22px; font-size: 14px; font-weight: 600;
+    width: 100%; cursor: default;
   }
+
+  /* VIP Card Gradients */
   .vip-intern { background: linear-gradient(135deg, #ff6b00, #ffaa00); }
   .vip-job1 { background: linear-gradient(135deg, #f0c000, #f0a000); }
   .vip-job2 { background: linear-gradient(135deg, #00c87a, #00a060); }
@@ -380,95 +525,324 @@
   .vip-job9 { background: linear-gradient(135deg, #4080a0, #80c0d0); }
   .vip-job10 { background: linear-gradient(135deg, #1a1a2a, #2a2a4a); border: 1px solid rgba(255,255,255,0.1); }
 
-  /* PROFIT */
+  /* ========== PROFIT PAGE ========== */
   .profit-page-content { padding: 16px; }
-  .profit-table-img { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; overflow: hidden; margin-bottom: 20px; }
-  .profit-table-title { text-align: center; padding: 14px; font-size: 15px; font-weight: 700; color: var(--yellow); border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .profit-table-img {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .profit-table-title {
+    text-align: center; padding: 14px;
+    font-size: 15px; font-weight: 700;
+    color: var(--yellow);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
   .profit-table { width: 100%; border-collapse: collapse; font-size: 11px; }
-  .profit-table th { background: rgba(255,255,255,0.06); padding: 8px 4px; text-align: center; color: var(--gray); font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.06); }
-  .profit-table td { padding: 7px 4px; text-align: center; color: var(--white); border-bottom: 1px solid rgba(255,255,255,0.04); }
+  .profit-table th {
+    background: rgba(255,255,255,0.06);
+    padding: 8px 4px; text-align: center;
+    color: var(--gray); font-weight: 600;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .profit-table td {
+    padding: 7px 4px; text-align: center;
+    color: var(--white);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+
   .profit-section { margin-bottom: 16px; }
   .profit-section h3 { color: var(--yellow); font-size: 18px; font-weight: 700; margin-bottom: 8px; }
   .profit-section p { color: var(--white); font-size: 14px; line-height: 1.7; }
-  .invite-reward-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,200,0,0.15); border-radius: 16px; overflow: hidden; margin-bottom: 20px; }
-  .invite-reward-title { background: rgba(255,200,0,0.1); text-align: center; padding: 14px; font-size: 16px; font-weight: 800; color: var(--yellow); letter-spacing: 1px; }
+
+  .invite-reward-box {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,200,0,0.15);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .invite-reward-title {
+    background: rgba(255,200,0,0.1);
+    text-align: center; padding: 14px;
+    font-size: 16px; font-weight: 800; color: var(--yellow);
+    letter-spacing: 1px;
+  }
   .invite-reward-subtitle { text-align: center; color: var(--gray); font-size: 12px; padding: 6px; }
-  .level-badges { display: flex; gap: 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
-  .level-badge { flex: 1; text-align: center; padding: 10px 4px; font-size: 12px; color: var(--white); font-weight: 600; border-right: 1px solid rgba(255,255,255,0.06); }
+  .level-badges {
+    display: flex; gap: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .level-badge {
+    flex: 1; text-align: center; padding: 10px 4px;
+    font-size: 12px; color: var(--white); font-weight: 600;
+    border-right: 1px solid rgba(255,255,255,0.06);
+  }
   .level-badge:last-child { border-right: none; }
   .level-badge span { color: var(--yellow); }
-  .salary-table-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,200,0,0.15); border-radius: 16px; overflow: hidden; margin-bottom: 20px; }
-  .salary-table-title { background: rgba(255,200,0,0.1); text-align: center; padding: 14px; font-size: 16px; font-weight: 800; color: var(--yellow); letter-spacing: 1px; }
 
-  /* MY PAGE */
-  .my-page-header { padding: 20px 16px 10px; display: flex; flex-direction: column; align-items: center; position: relative; }
-  .my-page-header .wallet-link { position: absolute; top: 20px; right: 16px; color: var(--white); font-size: 13px; background: none; border: none; cursor: pointer; }
-  .avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, #333, #555); display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 8px; overflow: hidden; border: 2px solid rgba(255,255,255,0.1); }
+  .salary-table-box {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,200,0,0.15);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .salary-table-title {
+    background: rgba(255,200,0,0.1);
+    text-align: center; padding: 14px;
+    font-size: 16px; font-weight: 800; color: var(--yellow);
+    letter-spacing: 1px;
+  }
+
+  /* ========== MY PAGE ========== */
+  .my-page-header {
+    padding: 20px 16px 10px;
+    display: flex; flex-direction: column; align-items: center;
+    position: relative;
+  }
+  .my-page-header .wallet-link {
+    position: absolute; top: 20px; right: 16px;
+    color: var(--white); font-size: 13px;
+    background: none; border: none; cursor: pointer;
+  }
+  .avatar {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: linear-gradient(135deg, #333, #555);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px; margin-bottom: 8px;
+    overflow: hidden; border: 2px solid rgba(255,255,255,0.1);
+  }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; }
   .phone-num { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
-  .intern-badge { background: rgba(255,200,0,0.15); border: 1px solid rgba(255,200,0,0.3); border-radius: 20px; padding: 4px 14px; font-size: 12px; font-weight: 600; color: var(--yellow); }
-  .wallet-section { margin: 16px 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: 20px; padding: 16px; }
+  .intern-badge {
+    background: rgba(255,200,0,0.15);
+    border: 1px solid rgba(255,200,0,0.3);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 12px; font-weight: 600; color: var(--yellow);
+  }
+
+  .wallet-section {
+    margin: 16px 14px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 20px;
+    padding: 16px;
+  }
   .wallet-label { color: var(--gray); font-size: 13px; margin-bottom: 4px; }
   .wallet-amount { font-size: 36px; font-weight: 800; color: var(--yellow); }
   .wallet-deposit-label { color: var(--gray); font-size: 13px; margin-top: 10px; margin-bottom: 2px; }
   .wallet-deposit-amount { font-size: 28px; font-weight: 800; color: var(--yellow); }
-  .earnings-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 0 14px 4px; }
-  .earning-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 14px; }
+
+  .earnings-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 12px; padding: 0 14px 4px;
+  }
+  .earning-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px; padding: 14px;
+  }
   .earning-card .e-label { color: var(--gray); font-size: 12px; margin-bottom: 4px; }
   .earning-card .e-value { color: var(--yellow); font-size: 20px; font-weight: 700; }
-  .earnings-grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; padding: 12px 14px 4px; }
-  .earning-card3 { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 12px 8px; text-align: center; }
+
+  .earnings-grid3 {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px; padding: 12px 14px 4px;
+  }
+  .earning-card3 {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px; padding: 12px 8px;
+    text-align: center;
+  }
   .earning-card3 .e-label { color: var(--gray); font-size: 11px; margin-bottom: 4px; line-height: 1.3; }
   .earning-card3 .e-value { color: var(--yellow); font-size: 16px; font-weight: 700; }
+
   .menu-list { padding: 16px 14px; }
-  .menu-item { display: flex; align-items: center; gap: 14px; padding: 16px 14px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 14px; margin-bottom: 8px; cursor: pointer; }
-  .menu-item .menu-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; background: rgba(255,255,255,0.08); flex-shrink: 0; }
+  .menu-item {
+    display: flex; align-items: center; gap: 14px;
+    padding: 16px 14px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 14px;
+    margin-bottom: 8px;
+    cursor: pointer;
+  }
+  .menu-item .menu-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; background: rgba(255,255,255,0.08);
+    flex-shrink: 0;
+  }
   .menu-item .menu-text { flex: 1; font-size: 15px; color: var(--white); }
   .menu-item .menu-arrow { color: var(--gray); font-size: 18px; }
   .menu-item.logout .menu-text { color: var(--red); }
   .menu-item.logout .menu-icon { background: rgba(255,61,61,0.1); }
 
-  /* RECHARGE */
+  /* ========== RECHARGE PAGE ========== */
   .recharge-content { padding: 16px; }
-  .balance-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,200,0,0.15); border-radius: 20px; padding: 20px; margin-bottom: 20px; }
+  .balance-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,200,0,0.15);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
   .balance-card .bal-label { color: var(--gray); font-size: 14px; margin-bottom: 6px; }
   .balance-card .bal-amount { font-size: 32px; font-weight: 800; color: var(--yellow); margin-bottom: 6px; }
   .balance-card .bal-hint { color: var(--gray); font-size: 13px; }
-  .section-label { color: var(--gray); font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px; }
-  .channel-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 16px 18px; display: flex; align-items: center; gap: 14px; margin-bottom: 12px; cursor: pointer; }
-  .channel-card .ch-icon { width: 46px; height: 46px; border-radius: 12px; background: var(--yellow); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+
+  .section-label {
+    color: var(--gray); font-size: 12px;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .channel-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 16px 18px;
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+  .channel-card .ch-icon {
+    width: 46px; height: 46px; border-radius: 12px;
+    background: var(--yellow);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
   .channel-card .ch-info { flex: 1; }
   .channel-card .ch-name { font-size: 16px; font-weight: 700; color: var(--white); }
-  .channel-card .ch-range { font-size: 12px; margin-top: 3px; display: flex; gap: 4px; align-items: center; }
+  .channel-card .ch-range {
+    font-size: 12px; margin-top: 3px;
+    display: flex; gap: 4px; align-items: center;
+  }
   .channel-card .ch-range .min, .channel-card .ch-range .max { color: var(--yellow); font-weight: 700; }
   .channel-card .ch-range .sep { color: var(--gray); }
-  .channel-card .wallet-tag { background: var(--blue); color: white; font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 4px; margin-top: 5px; display: inline-block; }
+  .channel-card .wallet-tag {
+    background: var(--blue);
+    color: white; font-size: 10px; font-weight: 700;
+    padding: 3px 8px; border-radius: 4px; margin-top: 5px;
+    display: inline-block;
+  }
   .channel-card .arrow { color: var(--yellow); font-size: 20px; }
-  .recharge-detail-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,200,0,0.1); border-radius: 16px; padding: 0; margin-bottom: 16px; overflow: hidden; }
-  .detail-row { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+
+  /* Recharge Detail */
+  .recharge-detail-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,200,0,0.1);
+    border-radius: 16px;
+    padding: 0;
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+  .detail-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
   .detail-row:last-child { border-bottom: none; }
   .detail-row .d-label { color: var(--gray); font-size: 14px; }
-  .detail-row .d-value { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; color: var(--white); }
-  .copy-btn-sm { background: var(--yellow); color: #000; border: none; border-radius: 20px; padding: 6px 14px; font-size: 12px; font-weight: 700; cursor: pointer; }
-  .amount-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 16px; }
-  .amount-btn { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 14px 8px; text-align: center; font-size: 13px; font-weight: 600; color: var(--white); cursor: pointer; }
-  .amount-btn.active { background: var(--yellow); color: #000; border-color: var(--yellow); }
-  .txn-input { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,200,0,0.2); border-radius: 12px; padding: 16px 18px; width: 100%; color: var(--white); font-size: 15px; outline: none; margin-bottom: 12px; }
+  .detail-row .d-value {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 14px; font-weight: 600; color: var(--white);
+  }
+  .copy-btn-sm {
+    background: var(--yellow);
+    color: #000; border: none; border-radius: 20px;
+    padding: 6px 14px; font-size: 12px; font-weight: 700;
+    cursor: pointer; display: flex; align-items: center; gap: 5px;
+  }
+
+  .amount-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px; margin-bottom: 16px;
+  }
+  .amount-btn {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 14px 8px;
+    text-align: center;
+    font-size: 13px; font-weight: 600; color: var(--white);
+    cursor: pointer;
+  }
+  .amount-btn.active {
+    background: var(--yellow);
+    color: #000; border-color: var(--yellow);
+  }
+
+  .txn-input {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,200,0,0.2);
+    border-radius: 12px;
+    padding: 16px 18px;
+    width: 100%;
+    color: var(--white); font-size: 15px;
+    outline: none; margin-bottom: 12px;
+  }
   .txn-input::placeholder { color: var(--gray); }
-  .warning-box { background: rgba(255,200,0,0.08); border: 1px solid rgba(255,200,0,0.2); border-radius: 12px; padding: 14px 16px; display: flex; gap: 10px; margin-bottom: 16px; }
+
+  .warning-box {
+    background: rgba(255,200,0,0.08);
+    border: 1px solid rgba(255,200,0,0.2);
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex; gap: 10px;
+    margin-bottom: 16px;
+  }
   .warning-box .warn-icon { font-size: 18px; flex-shrink: 0; }
   .warning-box p { color: var(--gray); font-size: 12px; line-height: 1.6; }
 
-  /* WALLET */
-  .wallet-bal-card { margin: 14px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,200,0,0.15); border-radius: 20px; padding: 20px; }
+  /* ========== WALLET HISTORY ========== */
+  .wallet-bal-card {
+    margin: 14px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,200,0,0.15);
+    border-radius: 20px;
+    padding: 20px;
+  }
   .wallet-bal-card .wl-label { color: var(--gray); font-size: 14px; margin-bottom: 4px; }
   .wallet-bal-card .wl-amount { font-size: 32px; font-weight: 800; color: var(--yellow); margin-bottom: 14px; }
   .wallet-bal-card .wl-btns { display: flex; gap: 10px; }
-  .wl-btn { flex: 1; padding: 13px; background: var(--yellow); color: #000; border: none; border-radius: 30px; font-size: 15px; font-weight: 700; cursor: pointer; }
-  .tab-row { display: flex; border-bottom: 1px solid rgba(255,255,255,0.07); margin: 0 14px 14px; }
-  .tab-item { flex: 1; text-align: center; padding: 12px; font-size: 14px; font-weight: 600; color: var(--gray); cursor: pointer; border-bottom: 2px solid transparent; }
+  .wl-btn {
+    flex: 1; padding: 13px;
+    background: var(--yellow); color: #000;
+    border: none; border-radius: 30px;
+    font-size: 15px; font-weight: 700; cursor: pointer;
+  }
+
+  .tab-row {
+    display: flex;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    margin: 0 14px 14px;
+  }
+  .tab-item {
+    flex: 1; text-align: center; padding: 12px;
+    font-size: 14px; font-weight: 600; color: var(--gray);
+    cursor: pointer; border-bottom: 2px solid transparent;
+  }
   .tab-item.active { color: var(--yellow); border-bottom-color: var(--yellow); }
-  .txn-item { margin: 0 14px 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,200,0,0.1); border-radius: 14px; padding: 14px 16px; display: flex; align-items: center; gap: 12px; }
-  .txn-item .txn-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--yellow); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; color: #000; }
+
+  .txn-item {
+    margin: 0 14px 10px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,200,0,0.1);
+    border-radius: 14px;
+    padding: 14px 16px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .txn-item .txn-icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: var(--yellow);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0; color: #000;
+  }
   .txn-item .txn-info { flex: 1; }
   .txn-item .txn-id { font-size: 13px; color: var(--white); font-weight: 500; }
   .txn-item .txn-date { font-size: 11px; color: var(--gray); margin-top: 3px; }
@@ -476,155 +850,180 @@
   .txn-item .txn-status { font-size: 12px; color: var(--gray); }
   .txn-item .txn-amount { font-size: 15px; font-weight: 700; color: var(--yellow); margin-top: 2px; }
 
-  /* INVITE */
+  /* ========== INVITE PAGE ========== */
   .invite-content { padding: 16px; }
-  .invite-link-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,200,0,0.15); border-radius: 20px; padding: 20px; display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
-  .invite-link-card .link-text { flex: 1; font-size: 13px; color: var(--yellow); word-break: break-all; line-height: 1.5; }
-  .qr-box { width: 90px; height: 90px; background: var(--yellow); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 60px; flex-shrink: 0; }
-  .invite-action-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,200,0,0.1); border-radius: 16px; padding: 16px 18px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+  .invite-link-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,200,0,0.15);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 12px;
+  }
+  .invite-link-card .link-text {
+    flex: 1; font-size: 13px; color: var(--yellow); word-break: break-all;
+    line-height: 1.5;
+  }
+  .qr-box {
+    width: 90px; height: 90px;
+    background: var(--yellow);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 60px;
+    flex-shrink: 0;
+  }
+
+  .invite-action-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,200,0,0.1);
+    border-radius: 16px;
+    padding: 16px 18px;
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 10px;
+  }
   .invite-action-card .ia-label { font-size: 15px; font-weight: 600; color: var(--white); }
   .invite-action-card .ia-sub { font-size: 12px; color: var(--gray); margin-top: 2px; }
-  .ia-btn { background: var(--yellow); color: #000; border: none; border-radius: 20px; padding: 9px 20px; font-size: 14px; font-weight: 700; cursor: pointer; }
-  .invite-desc { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 16px; color: var(--gray); font-size: 13px; line-height: 1.7; margin-top: 10px; }
+  .ia-btn {
+    background: var(--yellow); color: #000;
+    border: none; border-radius: 20px;
+    padding: 9px 20px; font-size: 14px; font-weight: 700;
+    cursor: pointer;
+  }
 
-  /* LUCKY */
-  .lucky-page { background: linear-gradient(160deg, #ff6a00, #ff9500, #ffb700); min-height: 100vh; }
-  .lucky-header { display: flex; align-items: center; padding: 16px 18px; }
+  .invite-desc {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px;
+    padding: 16px;
+    color: var(--gray); font-size: 13px; line-height: 1.7;
+    margin-top: 10px;
+  }
+
+  /* ========== LUCKY DRAW ========== */
+  .lucky-page {
+    background: linear-gradient(160deg, #ff6a00, #ff9500, #ffb700);
+    min-height: 100vh;
+  }
+  .lucky-header {
+    display: flex; align-items: center;
+    padding: 16px 18px;
+  }
   .lucky-header .back { color: white; font-size: 22px; background: none; border: none; cursor: pointer; }
+  .lucky-header .red-dot { width: 10px; height: 10px; background: red; border-radius: 50%; margin-left: 8px; }
   .lucky-title-box { text-align: center; padding: 10px 20px 20px; }
-  .lucky-title-box h1 { font-size: 42px; font-weight: 900; color: white; text-shadow: 3px 3px 0 rgba(0,0,0,0.2); letter-spacing: 2px; }
+  .lucky-title-box h1 {
+    font-size: 42px; font-weight: 900; color: white;
+    text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+    letter-spacing: 2px;
+  }
   .lucky-title-box p { font-size: 13px; color: rgba(255,255,255,0.85); margin-top: 4px; }
-  .spin-grid-wrap { margin: 0 14px; background: rgba(255,100,0,0.5); border-radius: 20px; padding: 10px; border: 3px solid rgba(200,50,0,0.4); }
-  .spin-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
-  .spin-cell { background: white; border-radius: 12px; padding: 16px 8px; display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; color: #333; }
+
+  .spin-grid-wrap {
+    margin: 0 14px;
+    background: rgba(255,100,0,0.5);
+    border-radius: 20px;
+    padding: 10px;
+    border: 3px solid rgba(200,50,0,0.4);
+  }
+  .spin-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+  }
+  .spin-cell {
+    background: white;
+    border-radius: 12px;
+    padding: 16px 8px;
+    display: flex; flex-direction: column; align-items: center;
+    gap: 6px;
+    font-size: 11px; font-weight: 700; color: #333;
+  }
   .spin-cell .coin { font-size: 28px; }
-  .spin-center { background: linear-gradient(135deg, #cc1a00, #ff3300); border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: none; color: white; font-size: 20px; font-weight: 800; box-shadow: 0 4px 15px rgba(200,0,0,0.4); }
-  .spin-info { margin: 16px 14px; background: rgba(255,255,255,0.9); border-radius: 16px; padding: 16px 18px; }
+  .spin-center {
+    background: linear-gradient(135deg, #cc1a00, #ff3300);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    border: none;
+    color: white; font-size: 20px; font-weight: 800;
+    box-shadow: 0 4px 15px rgba(200,0,0,0.4);
+  }
+
+  .spin-info {
+    margin: 16px 14px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 16px;
+    padding: 16px 18px;
+  }
   .spin-info .spin-count { font-size: 16px; font-weight: 700; color: #333; text-align: center; }
   .spin-info .spin-hint { font-size: 12px; color: #666; text-align: center; margin-top: 4px; }
-  .view-records-btn { display: block; width: 100%; background: rgba(0,0,0,0.08); border: none; border-radius: 20px; padding: 10px; font-size: 14px; color: #444; cursor: pointer; margin-top: 10px; }
+  .view-records-btn {
+    display: block; width: 100%;
+    background: rgba(0,0,0,0.08);
+    border: none; border-radius: 20px;
+    padding: 10px; font-size: 14px; color: #444;
+    cursor: pointer; margin-top: 10px;
+  }
   .invite-friends-text { text-align: center; color: rgba(255,255,255,0.9); font-size: 14px; font-weight: 600; margin: 14px 0 4px; }
-  .rule-banner { text-align: center; color: white; font-size: 13px; font-style: italic; background: rgba(200,50,0,0.4); padding: 12px; margin-top: 16px; }
+  .rule-banner {
+    text-align: center; color: white; font-size: 13px; font-style: italic;
+    background: rgba(200,50,0,0.4); padding: 12px;
+    margin-top: 16px;
+  }
 
-  /* ABOUT */
+  /* ========== ABOUT PAGE ========== */
   .about-content { padding: 16px; }
-  .about-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 20px; padding: 22px; margin-bottom: 14px; }
-  .about-card h3 { font-size: 18px; font-weight: 700; color: var(--yellow); margin-bottom: 12px; text-align: center; }
-  .about-card p { color: var(--white); font-size: 14px; line-height: 1.8; text-align: center; }
+  .about-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 20px;
+    padding: 22px;
+    margin-bottom: 14px;
+  }
+  .about-card h3 {
+    font-size: 18px; font-weight: 700;
+    color: var(--yellow); margin-bottom: 12px; text-align: center;
+  }
+  .about-card p {
+    color: var(--white); font-size: 14px; line-height: 1.8;
+    text-align: center;
+  }
   .about-card ul { padding: 0 0 0 4px; }
-  .about-card ul li { color: var(--yellow); font-size: 14px; line-height: 1.8; padding-left: 16px; position: relative; list-style: none; }
+  .about-card ul li {
+    color: var(--yellow); font-size: 14px; line-height: 1.8;
+    padding-left: 16px; position: relative; list-style: none;
+  }
   .about-card ul li::before { content: '•'; position: absolute; left: 0; }
   .about-card ul li span { color: var(--white); }
 
-  /* CONTACT SUPPORT MODAL */
-  .modal-overlay {
-    display: none;
-    position: fixed; inset: 0; z-index: 500;
-    background: rgba(0,0,0,0.7);
-    backdrop-filter: blur(4px);
-    align-items: center; justify-content: center;
-  }
-  .modal-overlay.active { display: flex; }
-  .modal-box {
-    background: #1a1a1a;
-    border: 2px solid var(--yellow);
-    border-radius: 20px;
-    padding: 28px 24px;
-    width: 85%; max-width: 340px;
-    box-shadow: 0 0 40px rgba(255,200,0,0.3);
-  }
-  .modal-title {
-    text-align: center; font-size: 20px; font-weight: 800;
-    color: var(--yellow); margin-bottom: 20px;
-  }
-  .modal-btn {
-    width: 100%; padding: 16px;
-    background: var(--yellow); color: #000;
-    border: none; border-radius: 50px;
-    font-size: 16px; font-weight: 700;
-    cursor: pointer; margin-bottom: 12px;
-    display: flex; align-items: center; justify-content: center; gap: 10px;
-  }
-  .modal-btn:hover { background: var(--yellow2); }
-  .modal-cancel {
-    width: 100%; padding: 12px;
-    background: none; color: var(--gray);
-    border: none; font-size: 14px; font-weight: 600;
-    cursor: pointer; letter-spacing: 1px; margin-top: 4px;
-  }
-
-  /* PAYMENT SUCCESS PAGE */
-  .payment-success-page {
-    display: flex; flex-direction: column;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #0a0a0a, #0d0d1a);
-  }
-  .payment-result-bar {
-    display: flex; align-items: center;
-    padding: 16px 18px;
-    background: rgba(0,0,0,0.3);
-  }
-  .payment-result-bar .back-btn { color: var(--white); font-size: 22px; background: none; border: none; cursor: pointer; }
-  .payment-result-bar .bar-title { flex: 1; text-align: center; font-size: 18px; font-weight: 700; color: var(--blue); padding-right: 36px; }
-  .payment-card {
-    margin: 60px 24px 0;
-    background: rgba(255,255,255,0.08);
-    backdrop-filter: blur(10px);
-    border-radius: 24px;
-    padding: 40px 24px;
-    display: flex; flex-direction: column; align-items: center;
-    gap: 16px;
-    border: 1px solid rgba(255,255,255,0.1);
-  }
-  .success-circle {
-    width: 80px; height: 80px;
-    background: #00C853;
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 36px; color: white;
-    box-shadow: 0 0 30px rgba(0,200,80,0.4);
-  }
-  .success-title { font-size: 26px; font-weight: 800; color: white; }
-  .success-msg { font-size: 14px; color: var(--gray); text-align: center; line-height: 1.6; }
-  .success-divider { width: 100%; height: 1px; background: rgba(255,255,255,0.1); }
-  .btn-history {
-    width: 100%; padding: 16px;
-    background: linear-gradient(135deg, var(--blue), #9b59b6);
-    color: white; border: none; border-radius: 50px;
-    font-size: 16px; font-weight: 700; cursor: pointer;
-    display: flex; align-items: center; justify-content: center; gap: 8px;
-  }
-  .btn-back-home {
-    width: 100%; padding: 16px;
-    background: rgba(255,255,255,0.1);
-    color: white; border: none; border-radius: 50px;
-    font-size: 16px; font-weight: 700; cursor: pointer;
-    display: flex; align-items: center; justify-content: center; gap: 8px;
-  }
-
-  /* UTILS */
+  /* ========== UTILITIES ========== */
   .page-inner { flex: 1; overflow-y: auto; padding-bottom: 80px; }
   .page-inner::-webkit-scrollbar { display: none; }
+  .mt-16 { margin-top: 16px; }
+  .px-14 { padding: 0 14px; }
+  .text-center { text-align: center; }
   .hidden { display: none !important; }
 </style>
 </head>
 <body>
 
+<!-- BACKGROUND -->
 <div class="bg-waves"></div>
 
-<!-- ===== LOGIN ===== -->
+<!-- ===================== PAGE 1: LOGIN ===================== -->
 <div class="page active" id="page-login">
   <div class="top-bar">
-    <button class="back-btn">←</button>
+    <button class="back-btn" onclick="showPage('page-login')">←</button>
     <div></div>
     <button class="lang-btn">Language</button>
   </div>
+
   <div class="stx-logo">
     <div class="logo-box">
       <div class="logo-text">STX</div>
       <div class="logo-sub">MOVIES</div>
     </div>
   </div>
+
   <div class="form-wrap">
     <div class="input-group">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
@@ -644,23 +1043,24 @@
     </div>
     <button class="btn-primary" onclick="showPage('page-home')">Log in now</button>
     <button class="btn-secondary" onclick="showPage('page-register')">Register now</button>
-    <div class="link-row">Don't have an account? <span class="link" onclick="showPage('page-register')">Register</span></div>
   </div>
 </div>
 
-<!-- ===== REGISTER ===== -->
+<!-- ===================== PAGE 2: REGISTER ===================== -->
 <div class="page" id="page-register">
   <div class="top-bar">
     <button class="back-btn" onclick="showPage('page-login')">←</button>
     <div></div>
     <button class="lang-btn">Language</button>
   </div>
+
   <div class="stx-logo">
     <div class="logo-box">
       <div class="logo-text">STX</div>
       <div class="logo-sub">MOVIES</div>
     </div>
   </div>
+
   <div class="form-wrap">
     <div class="input-group">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
@@ -679,12 +1079,12 @@
       <input type="text" placeholder="Please enter the invitation code">
     </div>
     <button class="btn-primary" onclick="showPage('page-home')">Register now</button>
-    <button class="btn-secondary">Have an account, download APP</button>
+    <button class="btn-secondary" onclick="showPage('page-home')">Have an account, download APP</button>
     <div class="link-row">Have an account? <span class="link" onclick="showPage('page-login')">Login</span></div>
   </div>
 </div>
 
-<!-- ===== HOME ===== -->
+<!-- ===================== PAGE 3: HOME ===================== -->
 <div class="page" id="page-home">
   <div class="home-header">
     <div class="home-logo">
@@ -693,63 +1093,77 @@
         <div class="hl-sub">MOVIES</div>
       </div>
     </div>
-    <button class="chat-btn" onclick="openSupportModal()">
+    <button class="chat-btn" onclick="showPage('page-support')">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
       <div class="red-dot"></div>
     </button>
   </div>
+
   <div class="scroll-content">
-    <!-- Banner Slider with real images -->
-    <div class="banner-slider" style="position:relative;">
-      <div class="banner-slide active" id="slide-0">
-        <img src="SLIDE1_PLACEHOLDER" alt="STX Movies">
+    <!-- Banner -->
+    <div class="banner-slider">
+      <div class="banner-slide active">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#1a1a3e,#2a1a4e);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
+          <div style="font-size:48px;">🎬</div>
+          <div style="font-size:18px;font-weight:700;color:white;letter-spacing:3px;">STX MOVIES</div>
+        </div>
         <div class="slide-overlay"></div>
       </div>
-      <div class="banner-slide" id="slide-1">
-        <img src="SLIDE2_PLACEHOLDER" alt="STX Movies">
+      <div class="banner-slide">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#1a2e1a,#2a4e1a);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
+          <div style="font-size:48px;">🏆</div>
+          <div style="font-size:16px;font-weight:700;color:white;">Earn While Watching</div>
+        </div>
         <div class="slide-overlay"></div>
       </div>
-      <div class="banner-slide" id="slide-2">
-        <img src="SLIDE3_PLACEHOLDER" alt="STX Movies">
+      <div class="banner-slide">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#2e1a1a,#4e2a1a);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;">
+          <div style="font-size:48px;">💰</div>
+          <div style="font-size:16px;font-weight:700;color:white;">Daily Income Up to 53,120 ETB</div>
+        </div>
         <div class="slide-overlay"></div>
-      </div>
-      <div class="banner-dots">
-        <div class="banner-dot active" id="dot-0"></div>
-        <div class="banner-dot" id="dot-1"></div>
-        <div class="banner-dot" id="dot-2"></div>
       </div>
     </div>
 
-    <!-- Announcement ticker -->
+    <!-- Announcement -->
     <div class="announcement">
       <div class="speaker">📢</div>
       <div class="ticker-wrap">
-        <div class="ticker-text" id="ticker-text"></div>
+        <div class="ticker-text">
+          Congratulations to ****6821 for recommending Job2 and getting 40 ETB &nbsp;&nbsp;&nbsp; Congratulations to ****8346 for recommending Job4 and getting 600 ETB &nbsp;&nbsp;&nbsp; Congratulations to ****1234 for completing tasks and earning 125 ETB
+        </div>
       </div>
     </div>
 
     <!-- Action Grid -->
     <div class="action-grid">
       <div class="action-card" onclick="showPage('page-recharge')">
-        <div class="icon-circle">💳</div><span>Recharge</span>
+        <div class="icon-circle">💳</div>
+        <span>Recharge</span>
       </div>
       <div class="action-card" onclick="showPage('page-withdrawal')">
-        <div class="icon-circle">💸</div><span>Withdrawal</span>
+        <div class="icon-circle">💸</div>
+        <span>Withdrawal</span>
       </div>
       <div class="action-card" onclick="showPage('page-invite')">
-        <div class="icon-circle">👥</div><span>Invite Friends</span>
+        <div class="icon-circle">👥</div>
+        <span>Invite Friends</span>
       </div>
-      <div class="action-card" onclick="openSupportModal()">
-        <div class="icon-circle">🎧</div><span>Online Support</span>
+      <div class="action-card" onclick="showPage('page-support')">
+        <div class="icon-circle">🎧</div>
+        <span>Online Support</span>
       </div>
       <div class="action-card" onclick="showPage('page-about')">
-        <div class="icon-circle">🏢</div><span>Company</span>
+        <div class="icon-circle">🏢</div>
+        <span>Company</span>
       </div>
       <div class="action-card" onclick="showPage('page-lucky')">
-        <div class="icon-circle">🎰</div><span>Lucky Draw</span>
+        <div class="icon-circle">🎰</div>
+        <span>Lucky Draw</span>
       </div>
     </div>
 
+    <!-- Gift items -->
     <div class="gift-section">
       <div class="gift-item">🎁</div>
       <div class="gift-item" style="background:rgba(255,0,0,0.1);">🎀</div>
@@ -758,24 +1172,75 @@
       <div class="gift-item" style="background:rgba(100,100,255,0.1);">⭐</div>
     </div>
   </div>
+
+  <!-- Bottom Nav -->
   <div class="bottom-nav">
-    <button class="nav-item active" onclick="switchNav(this,'page-home')"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>Home</button>
-    <button class="nav-item" onclick="switchNav(this,'page-task')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Task</button>
-    <button class="nav-item vip-center" onclick="switchNav(this,'page-vip')"><div class="nav-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg></div>VIP</button>
-    <button class="nav-item" onclick="switchNav(this,'page-profit')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>Profit</button>
-    <button class="nav-item" onclick="switchNav(this,'page-my')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>My</button>
+    <button class="nav-item active" onclick="switchNav(this,'page-home')">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      Home
+    </button>
+    <button class="nav-item" onclick="switchNav(this,'page-task')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      Task
+    </button>
+    <button class="nav-item vip-center" onclick="switchNav(this,'page-vip')">
+      <div class="nav-icon-wrap">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+      </div>
+      VIP
+    </button>
+    <button class="nav-item" onclick="switchNav(this,'page-profit')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+      Profit
+    </button>
+    <button class="nav-item" onclick="switchNav(this,'page-my')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      My
+    </button>
   </div>
 </div>
 
-<!-- ===== TASK ===== -->
+<!-- ===================== PAGE 4: TASK HALL ===================== -->
 <div class="page" id="page-task">
   <div class="task-header">Task hall</div>
   <div class="page-inner">
     <div class="task-grid">
-      <div class="task-card"><div class="badge">Intern</div><div class="movie-img" style="background:linear-gradient(135deg,#1a1a2e,#2e1a3e);display:flex;align-items:center;justify-content:center;font-size:50px;">🎥</div><div class="card-bottom"><div class="etb-price">ETB<br>15.00</div><button class="watch-btn">▶ Watch</button></div></div>
-      <div class="task-card"><div class="badge">Intern</div><div class="movie-img" style="background:linear-gradient(135deg,#2e1a1a,#3e2a1a);display:flex;align-items:center;justify-content:center;font-size:50px;">🎬</div><div class="card-bottom"><div class="etb-price">ETB<br>15.00</div><button class="watch-btn">▶ Watch</button></div></div>
-      <div class="task-card"><div class="badge">Intern</div><div class="movie-img" style="background:linear-gradient(135deg,#1a2e1a,#2a3e1a);display:flex;align-items:center;justify-content:center;font-size:50px;">🏆</div><div class="card-bottom"><div class="etb-price">ETB<br>15.00</div><button class="watch-btn">▶ Watch</button></div></div>
-      <div class="task-card"><div class="badge">Intern</div><div class="movie-img" style="background:linear-gradient(135deg,#1a1a3e,#1a2a4e);display:flex;align-items:center;justify-content:center;font-size:50px;">⭐</div><div class="card-bottom"><div class="etb-price">ETB<br>15.00</div><button class="watch-btn">▶ Watch</button></div></div>
+      <!-- Task Card 1 -->
+      <div class="task-card">
+        <div class="badge">Intern</div>
+        <div class="movie-img" style="background:linear-gradient(135deg,#1a1a2e,#2e1a3e);display:flex;align-items:center;justify-content:center;font-size:50px;">🎥</div>
+        <div class="card-bottom">
+          <div class="etb-price">ETB<br>15.00</div>
+          <button class="watch-btn">▶ Watch</button>
+        </div>
+      </div>
+      <!-- Task Card 2 -->
+      <div class="task-card">
+        <div class="badge">Intern</div>
+        <div class="movie-img" style="background:linear-gradient(135deg,#2e1a1a,#3e2a1a);display:flex;align-items:center;justify-content:center;font-size:50px;">🎬</div>
+        <div class="card-bottom">
+          <div class="etb-price">ETB<br>15.00</div>
+          <button class="watch-btn">▶ Watch</button>
+        </div>
+      </div>
+      <!-- Task Card 3 -->
+      <div class="task-card">
+        <div class="badge">Intern</div>
+        <div class="movie-img" style="background:linear-gradient(135deg,#1a2e1a,#2a3e1a);display:flex;align-items:center;justify-content:center;font-size:50px;">🏆</div>
+        <div class="card-bottom">
+          <div class="etb-price">ETB<br>15.00</div>
+          <button class="watch-btn">▶ Watch</button>
+        </div>
+      </div>
+      <!-- Task Card 4 -->
+      <div class="task-card">
+        <div class="badge">Intern</div>
+        <div class="movie-img" style="background:linear-gradient(135deg,#1a1a3e,#1a2a4e);display:flex;align-items:center;justify-content:center;font-size:50px;">⭐</div>
+        <div class="card-bottom">
+          <div class="etb-price">ETB<br>15.00</div>
+          <button class="watch-btn">▶ Watch</button>
+        </div>
+      </div>
     </div>
   </div>
   <div class="bottom-nav">
@@ -787,27 +1252,105 @@
   </div>
 </div>
 
-<!-- ===== VIP ===== -->
+<!-- ===================== PAGE 5: VIP PACKAGES ===================== -->
 <div class="page" id="page-vip">
   <div class="vip-title">VIP Packages</div>
   <div class="page-inner">
+    <!-- Current Package -->
     <div class="vip-current-card">
       <div class="identity">Your identity: Intern</div>
       <div class="detail">Daily Tasks: <span>4</span></div>
       <div class="detail">Effective Date: <span>2026-06-27 15:58:38</span></div>
       <div class="detail">Due Date: <span>2026-06-30 15:58:37</span></div>
     </div>
-    <div class="vip-card vip-intern"><div class="vip-name">Intern</div><div class="vip-detail">Price: ETB0.00</div><div class="vip-detail">Per Task Income: 15.00 ETB</div><div class="vip-detail">Daily Tasks: 4</div><button class="active-pkg-btn">Active Package</button></div>
-    <div class="vip-card vip-job1"><div class="vip-name">Job 1</div><div class="vip-detail">Price: ETB1500.00</div><div class="vip-detail">Per Task Income: 15.00 ETB</div><div class="vip-detail">Daily Tasks: 4</div><div class="vip-detail">Yearly Earnings: 21,900.00 ETB</div><button class="buy-btn">Buy Now</button></div>
-    <div class="vip-card vip-job2"><div class="vip-name">Job 2</div><div class="vip-detail">Price: ETB4500.00</div><div class="vip-detail">Per Task Income: 34.00 ETB</div><div class="vip-detail">Daily Tasks: 5</div><div class="vip-detail">Yearly Earnings: 62,050.00 ETB</div><button class="buy-btn">Buy Now</button></div>
-    <div class="vip-card vip-job3"><div class="vip-name">Job 3</div><div class="vip-detail">Price: ETB10500.00</div><div class="vip-detail">Per Task Income: 68.00 ETB</div><div class="vip-detail">Daily Tasks: 6</div><div class="vip-detail">Yearly Earnings: 148,920.00 ETB</div><button class="buy-btn">Buy Now</button></div>
-    <div class="vip-card vip-job4"><div class="vip-name">Job 4</div><div class="vip-detail">Price: ETB16200.00</div><div class="vip-detail">Per Task Income: 78.00 ETB</div><div class="vip-detail">Daily Tasks: 8</div><div class="vip-detail">Yearly Earnings: 227,760.00 ETB</div><button class="buy-btn">Buy Now</button></div>
-    <div class="vip-card vip-job5"><div class="vip-name">Job 5</div><div class="vip-detail">Price: ETB32600.00</div><div class="vip-detail">Per Task Income: 125.00 ETB</div><div class="vip-detail">Daily Tasks: 10</div><div class="vip-detail">Yearly Earnings: 456,250.00 ETB</div><button class="buy-btn">Buy Now</button></div>
-    <div class="vip-card vip-job6"><div class="vip-name">Job 6</div><div class="vip-detail">Price: ETB60000.00</div><div class="vip-detail">Per Task Income: 200.00 ETB</div><div class="vip-detail">Daily Tasks: 12</div><div class="vip-detail">Yearly Earnings: 876,000.00 ETB</div><button class="buy-btn">Buy Now</button></div>
-    <div class="vip-card vip-job7"><div class="vip-name">Job 7</div><div class="vip-detail">Price: ETB132000.00</div><div class="vip-detail">Per Task Income: 338.00 ETB</div><div class="vip-detail">Daily Tasks: 15</div><div class="vip-detail">Yearly Earnings: 1,850,550.00 ETB</div><button class="buy-btn">Buy Now</button></div>
-    <div class="vip-card vip-job8"><div class="vip-name">Job 8</div><div class="vip-detail">Price: ETB220000.00</div><div class="vip-detail">Per Task Income: 476.00 ETB</div><div class="vip-detail">Daily Tasks: 20</div><div class="vip-detail">Yearly Earnings: 3,474,800.00 ETB</div><button class="buy-btn">Buy Now</button></div>
-    <div class="vip-card vip-job9"><div class="vip-name">Job 9</div><div class="vip-detail">Price: ETB550000.00</div><div class="vip-detail">Per Task Income: 716.00 ETB</div><div class="vip-detail">Daily Tasks: 32</div><div class="vip-detail">Yearly Earnings: 8,362,880.00 ETB</div><button class="buy-btn">Buy Now</button></div>
-    <div class="vip-card vip-job10"><div class="vip-name">Job 10</div><div class="vip-detail">Price: ETB1200000.00</div><div class="vip-detail">Per Task Income: 1660.00 ETB</div><div class="vip-detail">Daily Tasks: 32</div><div class="vip-detail">Yearly Earnings: 19,388,800.00 ETB</div><button class="buy-btn">Buy Now</button></div>
+
+    <div class="vip-card vip-intern">
+      <div class="vip-name">Intern</div>
+      <div class="vip-detail">Price: ETB0.00</div>
+      <div class="vip-detail">Per Task Income: 15.00 ETB</div>
+      <div class="vip-detail">Daily Tasks: 4</div>
+      <button class="active-pkg-btn">Active Package</button>
+    </div>
+    <div class="vip-card vip-job1">
+      <div class="vip-name">Job 1</div>
+      <div class="vip-detail">Price: ETB1500.00</div>
+      <div class="vip-detail">Per Task Income: 15.00 ETB</div>
+      <div class="vip-detail">Daily Tasks: 4</div>
+      <div class="vip-detail">Yearly Earnings: 21,900.00 ETB</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    <div class="vip-card vip-job2">
+      <div class="vip-name">Job 2</div>
+      <div class="vip-detail">Price: ETB4500.00</div>
+      <div class="vip-detail">Per Task Income: 34.00 ETB</div>
+      <div class="vip-detail">Daily Tasks: 5</div>
+      <div class="vip-detail">Yearly Earnings: 62,050.00 ETB</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    <div class="vip-card vip-job3">
+      <div class="vip-name">Job 3</div>
+      <div class="vip-detail">Price: ETB10500.00</div>
+      <div class="vip-detail">Per Task Income: 68.00 ETB</div>
+      <div class="vip-detail">Daily Tasks: 6</div>
+      <div class="vip-detail">Yearly Earnings: 148,920.00 ETB</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    <div class="vip-card vip-job4">
+      <div class="vip-name">Job 4</div>
+      <div class="vip-detail">Price: ETB16200.00</div>
+      <div class="vip-detail">Per Task Income: 78.00 ETB</div>
+      <div class="vip-detail">Daily Tasks: 8</div>
+      <div class="vip-detail">Yearly Earnings: 227,760.00 ETB</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    <div class="vip-card vip-job5">
+      <div class="vip-name">Job 5</div>
+      <div class="vip-detail">Price: ETB32600.00</div>
+      <div class="vip-detail">Per Task Income: 125.00 ETB</div>
+      <div class="vip-detail">Daily Tasks: 10</div>
+      <div class="vip-detail">Yearly Earnings: 456,250.00 ETB</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    <div class="vip-card vip-job6">
+      <div class="vip-name">Job 6</div>
+      <div class="vip-detail">Price: ETB60000.00</div>
+      <div class="vip-detail">Per Task Income: 200.00 ETB</div>
+      <div class="vip-detail">Daily Tasks: 12</div>
+      <div class="vip-detail">Yearly Earnings: 876,000.00 ETB</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    <div class="vip-card vip-job7">
+      <div class="vip-name">Job 7</div>
+      <div class="vip-detail">Price: ETB132000.00</div>
+      <div class="vip-detail">Per Task Income: 338.00 ETB</div>
+      <div class="vip-detail">Daily Tasks: 15</div>
+      <div class="vip-detail">Yearly Earnings: 1,850,550.00 ETB</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    <div class="vip-card vip-job8">
+      <div class="vip-name">Job 8</div>
+      <div class="vip-detail">Price: ETB220000.00</div>
+      <div class="vip-detail">Per Task Income: 476.00 ETB</div>
+      <div class="vip-detail">Daily Tasks: 20</div>
+      <div class="vip-detail">Yearly Earnings: 3,474,800.00 ETB</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    <div class="vip-card vip-job9">
+      <div class="vip-name">Job 9</div>
+      <div class="vip-detail">Price: ETB550000.00</div>
+      <div class="vip-detail">Per Task Income: 716.00 ETB</div>
+      <div class="vip-detail">Daily Tasks: 32</div>
+      <div class="vip-detail">Yearly Earnings: 8,362,880.00 ETB</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+    <div class="vip-card vip-job10">
+      <div class="vip-name">Job 10</div>
+      <div class="vip-detail">Price: ETB1200000.00</div>
+      <div class="vip-detail">Per Task Income: 1660.00 ETB</div>
+      <div class="vip-detail">Daily Tasks: 32</div>
+      <div class="vip-detail">Yearly Earnings: 19,388,800.00 ETB</div>
+      <button class="buy-btn">Buy Now</button>
+    </div>
   </div>
   <div class="bottom-nav">
     <button class="nav-item" onclick="switchNav(this,'page-home')"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>Home</button>
@@ -818,7 +1361,7 @@
   </div>
 </div>
 
-<!-- ===== PROFIT ===== -->
+<!-- ===================== PAGE 6: PROFIT ===================== -->
 <div class="page" id="page-profit">
   <div class="top-bar">
     <button class="back-btn" onclick="showPage('page-home')">←</button>
@@ -827,10 +1370,15 @@
   </div>
   <div class="page-inner">
     <div class="profit-page-content">
+      <!-- Earning Table -->
       <div class="profit-table-img">
         <div class="profit-table-title">Employee Level and Earning Details</div>
         <table class="profit-table">
-          <thead><tr><th>Level</th><th>Deposit<br>(ETB)</th><th>Daily<br>Task</th><th>Task<br>Income</th><th>Daily<br>Income</th><th>Monthly<br>Income</th><th>Annual<br>Income</th></tr></thead>
+          <thead>
+            <tr>
+              <th>Level</th><th>Deposit<br>(ETB)</th><th>Daily<br>Task</th><th>Task<br>Income</th><th>Daily<br>Income</th><th>Monthly<br>Income</th><th>Annual<br>Income</th>
+            </tr>
+          </thead>
           <tbody>
             <tr><td>Intern</td><td>0</td><td>4</td><td>15</td><td>60</td><td>—</td><td>—</td></tr>
             <tr><td>Job 1</td><td>1,500</td><td>4</td><td>15</td><td>60</td><td>1,800</td><td>21,900</td></tr>
@@ -846,6 +1394,7 @@
           </tbody>
         </table>
       </div>
+
       <div class="profit-section"><h3>Intern</h3><p>As an Intern, no deposit is required. You will complete 4 tasks per day for 3 days, earning 15 ETB per task. This provides a daily income of 60 ETB and a total income of 180 ETB over the 3-day period.</p></div>
       <div class="profit-section"><h3>Job 1</h3><p>To activate Job 1, a deposit of 1,500 ETB is required. You will receive 4 tasks each day, earning 15 ETB per task, resulting in a daily income of 60 ETB. Your estimated monthly income is 1,800 ETB, while your annual income reaches 21,900 ETB.</p></div>
       <div class="profit-section"><h3>Job 2</h3><p>Job 2 requires a deposit of 4,500 ETB. Members receive 5 daily tasks with a commission of 34 ETB per task, generating 170 ETB per day. The monthly income is 5,100 ETB, and the annual income is 62,050 ETB.</p></div>
@@ -857,6 +1406,8 @@
       <div class="profit-section"><h3>Job 8</h3><p>To join Job 8, a deposit of 220,000 ETB is needed. You will complete 20 tasks daily with a commission of 476 ETB per task, earning 9,520 ETB per day. Monthly income is 285,600 ETB, and annual income is 3,474,800 ETB.</p></div>
       <div class="profit-section"><h3>Job 9</h3><p>Job 9 requires a deposit of 550,000 ETB. You will receive 32 tasks each day, earning 716 ETB per task. This provides a daily income of 22,912 ETB, a monthly income of 687,360 ETB, and an annual income of 8,362,880 ETB.</p></div>
       <div class="profit-section"><h3>Job 10</h3><p>The highest level, Job 10, requires a deposit of 1,200,000 ETB. You will complete 32 tasks daily and earn 1,660 ETB per task, resulting in a daily income of 53,120 ETB. Your monthly income will be 1,593,600 ETB, and your annual income will reach 19,388,800 ETB.</p></div>
+
+      <!-- Invitation Reward -->
       <div class="invite-reward-box">
         <div class="invite-reward-title">INVITATION REWARD</div>
         <div class="invite-reward-subtitle">Earn Rewards When Your Friends Join!</div>
@@ -881,7 +1432,10 @@
           </tbody>
         </table>
       </div>
-      <div class="profit-section"><h3>Referral Commission</h3><p>When you directly invite a Level A member and they become a formal employee, you will earn a 10% referral bonus based on their deposit amount.</p></div>
+
+      <div class="profit-section"><h3>Referral Commission</h3><p>When you directly invite a Level A member and they become a formal employee, you will earn a 10% referral bonus based on their deposit amount. When your Level A member directly invites another member who becomes a formal employee, you will receive a 2% commission on that member's deposit amount.</p></div>
+
+      <!-- Monthly Salary Structure -->
       <div class="salary-table-box">
         <div class="salary-table-title">MONTHLY SALARY STRUCTURE</div>
         <div style="text-align:center;color:var(--gray);font-size:12px;padding:8px;">Achieve More. Earn More. Grow with STX.</div>
@@ -899,6 +1453,15 @@
           </tbody>
         </table>
       </div>
+
+      <div class="profit-section"><h3>Team Supervisor</h3><p>Members who invite 5 A-Level and 2 BC-Level subordinates will qualify for the position of Team Supervisor in the company and receive a monthly salary of 2,000 ETB.</p></div>
+      <div class="profit-section"><h3>Senior Supervisor</h3><p>Members who invite 10 A-Level and 5 BC-Level subordinates will qualify for the position of Senior Supervisor in the company and receive a monthly salary of 6,000 ETB.</p></div>
+      <div class="profit-section"><h3>Assistant Manager</h3><p>Members who invite 20 A-Level and 15 BC-Level subordinates will qualify for the position of Assistant Manager and receive a monthly salary of 15,000 ETB.</p></div>
+      <div class="profit-section"><h3>Team Manager</h3><p>Members who invite 35 A-Level and 40 BC-Level subordinates will qualify for the position of Team Manager and receive a monthly salary of 25,000 ETB.</p></div>
+      <div class="profit-section"><h3>Senior Manager</h3><p>Members who invite 50 A-Level and 90 BC-Level subordinates will qualify for the position of Senior Manager and receive a monthly salary of 40,000 ETB.</p></div>
+      <div class="profit-section"><h3>Regional Manager</h3><p>Members who invite 60 A-Level and 140 BC-Level subordinates will qualify for the position of Regional Manager and receive a monthly salary of 70,000 ETB.</p></div>
+      <div class="profit-section"><h3>Regional Director</h3><p>Members who invite 80 A-Level and 400 BC-Level subordinates will qualify for the position of Regional Director and receive a monthly salary of 150,000 ETB.</p></div>
+      <div class="profit-section"><h3>Executive Director</h3><p>Members who invite 100 A-Level and 900 BC-Level subordinates will qualify for the position of Executive Director and receive a monthly salary of 300,000 ETB.</p></div>
     </div>
   </div>
   <div class="bottom-nav">
@@ -910,7 +1473,7 @@
   </div>
 </div>
 
-<!-- ===== MY ===== -->
+<!-- ===================== PAGE 7: MY ===================== -->
 <div class="page" id="page-my">
   <div class="page-inner">
     <div class="my-page-header">
@@ -919,32 +1482,68 @@
       <div class="phone-num">924364056</div>
       <div class="intern-badge">Intern</div>
     </div>
+
     <div class="wallet-section">
       <div class="wallet-label">Main Wallet(ETB)</div>
       <div class="wallet-amount">60</div>
       <div class="wallet-deposit-label">Work Deposit(ETB)</div>
       <div class="wallet-deposit-amount">0.00</div>
     </div>
+
     <div class="earnings-grid">
       <div class="earning-card"><div class="e-label">Yesterday's earnings</div><div class="e-value">60.00</div></div>
       <div class="earning-card"><div class="e-label">Today's earnings</div><div class="e-value">0.00</div></div>
       <div class="earning-card"><div class="e-label">This month's earnings</div><div class="e-value">60.00</div></div>
       <div class="earning-card"><div class="e-label">This week's earnings</div><div class="e-value">60.00</div></div>
     </div>
+
     <div class="earnings-grid3">
       <div class="earning-card3"><div class="e-label">Total revenue</div><div class="e-value">60.00</div></div>
       <div class="earning-card3"><div class="e-label">Subordinate task commission</div><div class="e-value">0.00</div></div>
       <div class="earning-card3"><div class="e-label">Referral rebate</div><div class="e-value">0.00</div></div>
     </div>
+
     <div class="menu-list">
-      <div class="menu-item"><div class="menu-icon">👤</div><div class="menu-text">Personal information</div><div class="menu-arrow">›</div></div>
-      <div class="menu-item"><div class="menu-icon">📋</div><div class="menu-text">Task records</div><div class="menu-arrow">›</div></div>
-      <div class="menu-item"><div class="menu-icon">📅</div><div class="menu-text">Daily statement</div><div class="menu-arrow">›</div></div>
-      <div class="menu-item"><div class="menu-icon">👥</div><div class="menu-text">Team Reports</div><div class="menu-arrow">›</div></div>
-      <div class="menu-item" onclick="showPage('page-invite')"><div class="menu-icon">✉️</div><div class="menu-text">Invite friends</div><div class="menu-arrow">›</div></div>
-      <div class="menu-item" onclick="showPage('page-wallet')"><div class="menu-icon">💰</div><div class="menu-text">Financial Records</div><div class="menu-arrow">›</div></div>
-      <div class="menu-item"><div class="menu-icon">📱</div><div class="menu-text">Download APP</div><div class="menu-arrow">›</div></div>
-      <div class="menu-item logout" onclick="showPage('page-login')"><div class="menu-icon">🚪</div><div class="menu-text">Logout</div><div class="menu-arrow" style="color:var(--red)">›</div></div>
+      <div class="menu-item" onclick="showPage('page-profile')">
+        <div class="menu-icon">👤</div>
+        <div class="menu-text">Personal information</div>
+        <div class="menu-arrow">›</div>
+      </div>
+      <div class="menu-item" onclick="showPage('page-task-records')">
+        <div class="menu-icon">📋</div>
+        <div class="menu-text">Task records</div>
+        <div class="menu-arrow">›</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-icon">📅</div>
+        <div class="menu-text">Daily statement</div>
+        <div class="menu-arrow">›</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-icon">👥</div>
+        <div class="menu-text">Team Reports</div>
+        <div class="menu-arrow">›</div>
+      </div>
+      <div class="menu-item" onclick="showPage('page-invite')">
+        <div class="menu-icon">✉️</div>
+        <div class="menu-text">Invite friends</div>
+        <div class="menu-arrow">›</div>
+      </div>
+      <div class="menu-item" onclick="showPage('page-wallet')">
+        <div class="menu-icon">💰</div>
+        <div class="menu-text">Financial Records</div>
+        <div class="menu-arrow">›</div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-icon">📱</div>
+        <div class="menu-text">Download APP</div>
+        <div class="menu-arrow">›</div>
+      </div>
+      <div class="menu-item logout" onclick="showPage('page-login')">
+        <div class="menu-icon">🚪</div>
+        <div class="menu-text">Logout</div>
+        <div class="menu-arrow" style="color:var(--red)">›</div>
+      </div>
     </div>
   </div>
   <div class="bottom-nav">
@@ -956,7 +1555,7 @@
   </div>
 </div>
 
-<!-- ===== RECHARGE ===== -->
+<!-- ===================== PAGE 8: RECHARGE ===================== -->
 <div class="page" id="page-recharge">
   <div class="top-bar">
     <button class="back-btn" onclick="showPage('page-home')">←</button>
@@ -993,7 +1592,7 @@
   </div>
 </div>
 
-<!-- ===== RECHARGE DETAIL ===== -->
+<!-- ===================== PAGE 9: RECHARGE DETAIL ===================== -->
 <div class="page" id="page-recharge-detail">
   <div class="top-bar" style="background:rgba(0,0,0,0.5);">
     <button class="back-btn" onclick="showPage('page-recharge')">←</button>
@@ -1010,13 +1609,14 @@
         </div>
         <div class="detail-row">
           <div class="d-label">Receiver</div>
-          <div class="d-value">Ashenafi <button class="copy-btn-sm" onclick="copyText('Ashenafi')">📋 Copy</button></div>
+          <div class="d-value">Muluemebet <button class="copy-btn-sm" onclick="copyText('Muluemebet')">📋 Copy</button></div>
         </div>
         <div class="detail-row">
           <div class="d-label">Number</div>
-          <div class="d-value">1000313102134 <button class="copy-btn-sm" onclick="copyText('1000313102134')">📋 Copy</button></div>
+          <div class="d-value">1000042774848 <button class="copy-btn-sm" onclick="copyText('1000042774848')">📋 Copy</button></div>
         </div>
       </div>
+
       <p style="color:var(--white);font-size:14px;font-weight:600;margin-bottom:10px;">Amount (ETB)</p>
       <div class="amount-grid">
         <div class="amount-btn active" onclick="selectAmount(this)">1,500</div>
@@ -1030,36 +1630,21 @@
         <div class="amount-btn" onclick="selectAmount(this)">550,000</div>
         <div class="amount-btn" onclick="selectAmount(this)">1,200,000</div>
       </div>
+
       <p style="color:var(--white);font-size:14px;font-weight:600;margin-bottom:10px;">Transaction ID</p>
       <input type="text" class="txn-input" placeholder="Enter Transaction ID">
+
       <div class="warning-box">
         <div class="warn-icon">⚠️</div>
         <p>Please make sure the Transaction ID is correct, otherwise the order may be rejected. The amount must exactly match the submitted amount for faster processing.</p>
       </div>
-      <button class="btn-yellow" onclick="showPage('page-payment-success')">Submit Recharge</button>
+
+      <button class="btn-yellow">Submit Recharge</button>
     </div>
   </div>
 </div>
 
-<!-- ===== PAYMENT SUCCESS ===== -->
-<div class="page" id="page-payment-success">
-  <div class="payment-result-bar">
-    <button class="back-btn" onclick="showPage('page-home')">←</button>
-    <div class="bar-title">Payment Result</div>
-  </div>
-  <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;">
-    <div class="payment-card" style="width:100%;">
-      <div class="success-circle">✓</div>
-      <div class="success-title">Submit Success</div>
-      <div class="success-msg">Your payment has been submitted successfully.<br>Please wait for confirmation.</div>
-      <div class="success-divider"></div>
-      <button class="btn-history" onclick="showPage('page-wallet')">🕐 History</button>
-      <button class="btn-back-home" onclick="showPage('page-home')">🏠 Back to Home</button>
-    </div>
-  </div>
-</div>
-
-<!-- ===== WALLET ===== -->
+<!-- ===================== PAGE 10: WALLET HISTORY ===================== -->
 <div class="page" id="page-wallet">
   <div class="top-bar">
     <button class="back-btn" onclick="showPage('page-my')">←</button>
@@ -1093,7 +1678,7 @@
   </div>
 </div>
 
-<!-- ===== WITHDRAWAL ===== -->
+<!-- ===================== PAGE 11: WITHDRAWAL ===================== -->
 <div class="page" id="page-withdrawal">
   <div class="top-bar">
     <button class="back-btn" onclick="showPage('page-my')">←</button>
@@ -1108,13 +1693,29 @@
         <div class="bal-hint">Select withdrawal method below.</div>
       </div>
       <div class="section-label">WITHDRAWAL CHANNELS</div>
-      <div class="channel-card"><div class="ch-icon">💳</div><div class="ch-info"><div class="ch-name">CBE</div><div class="ch-range">Min: <span class="min">ETB100</span> <span class="sep">|</span> Max: <span class="max">ETB1,200,000</span></div><span class="wallet-tag">WALLET</span></div><div class="arrow">›</div></div>
-      <div class="channel-card"><div class="ch-icon">📱</div><div class="ch-info"><div class="ch-name">Telebirr</div><div class="ch-range">Min: <span class="min">ETB100</span> <span class="sep">|</span> Max: <span class="max">ETB1,200,000</span></div><span class="wallet-tag">WALLET</span></div><div class="arrow">›</div></div>
+      <div class="channel-card">
+        <div class="ch-icon">💳</div>
+        <div class="ch-info">
+          <div class="ch-name">CBE</div>
+          <div class="ch-range">Min: <span class="min">ETB100</span> <span class="sep">|</span> Max: <span class="max">ETB1,200,000</span></div>
+          <span class="wallet-tag">WALLET</span>
+        </div>
+        <div class="arrow">›</div>
+      </div>
+      <div class="channel-card">
+        <div class="ch-icon">📱</div>
+        <div class="ch-info">
+          <div class="ch-name">Telebirr</div>
+          <div class="ch-range">Min: <span class="min">ETB100</span> <span class="sep">|</span> Max: <span class="max">ETB1,200,000</span></div>
+          <span class="wallet-tag">WALLET</span>
+        </div>
+        <div class="arrow">›</div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- ===== INVITE ===== -->
+<!-- ===================== PAGE 12: INVITE ===================== -->
 <div class="page" id="page-invite">
   <div class="top-bar">
     <button class="back-btn" onclick="showPage('page-home')">←</button>
@@ -1129,31 +1730,42 @@
         <div class="link-text">https://etstxmovies.com/xml/index.html?register=ae471mp930</div>
         <div class="qr-box">▦</div>
       </div>
+
       <div class="invite-action-card">
-        <div><div class="ia-label">Copy Your Invitation Link</div></div>
+        <div>
+          <div class="ia-label">Copy Your Invitation Link</div>
+        </div>
         <button class="ia-btn" onclick="copyText('https://etstxmovies.com/xml/index.html?register=ae471mp930')">Copy</button>
       </div>
+
       <div class="invite-action-card">
         <div style="display:flex;align-items:center;gap:10px;">
           <div style="width:36px;height:36px;background:rgba(0,120,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;">✈️</div>
-          <div><div class="ia-label">Telegram Support</div></div>
+          <div>
+            <div class="ia-label">Telegram Support</div>
+          </div>
         </div>
-        <button class="ia-btn" onclick="window.open('https://t.me/STXMovies','_blank')">GO</button>
+        <button class="ia-btn">GO</button>
       </div>
-      <div class="invite-desc">When you refer new users to STX Movies, you can earn rewards through its three-level invitation program. You will receive 10% of the income generated by users you directly invite (Level 1 referrals). You will also earn 2% of the income generated by your Level 2 referrals and 1% of the income generated by your Level 3 referrals.</div>
+
+      <div class="invite-desc">
+        When you refer new users to STX Movies, you can earn rewards through its three-level invitation program. You will receive 10% of the income generated by users you directly invite (Level 1 referrals). You will also earn 2% of the income generated by your Level 2 referrals and 1% of the income generated by your Level 3 referrals. As your referral network grows and becomes more active, your invitation rewards can increase accordingly.
+      </div>
     </div>
   </div>
 </div>
 
-<!-- ===== LUCKY ===== -->
+<!-- ===================== PAGE 13: LUCKY DRAW ===================== -->
 <div class="page lucky-page" id="page-lucky">
   <div class="lucky-header">
     <button class="back" onclick="showPage('page-home')">‹</button>
+    <div class="red-dot"></div>
   </div>
   <div class="lucky-title-box">
     <h1>LUCKY DRAW</h1>
     <p>Cash rewards and robotic equipment rewards are waiting for you</p>
   </div>
+
   <div class="spin-grid-wrap">
     <div class="spin-grid">
       <div class="spin-cell"><div class="coin">🪙</div>ETB 50.00</div>
@@ -1167,16 +1779,18 @@
       <div class="spin-cell"><div class="coin">🪙</div>ETB 1,000.00</div>
     </div>
   </div>
+
   <div class="spin-info">
     <div class="spin-count">You have 0 spin(s)</div>
     <div class="spin-hint">You get 1 spin when an invited friend recharges money</div>
     <button class="view-records-btn">View draw records</button>
   </div>
+
   <div class="invite-friends-text">Invite friends to get spins</div>
   <div class="rule-banner">🎁 Rule Of Activity</div>
 </div>
 
-<!-- ===== ABOUT ===== -->
+<!-- ===================== PAGE 14: ABOUT ===================== -->
 <div class="page" id="page-about">
   <div class="top-bar">
     <button class="back-btn" onclick="showPage('page-home')">←</button>
@@ -1185,77 +1799,120 @@
   </div>
   <div class="page-inner">
     <div class="about-content">
-      <div class="about-card"><h3>About Us</h3><p>STX Movies is a global entertainment company dedicated to producing, financing, marketing, and distributing high-quality motion pictures and digital content. The company focuses on creating engaging stories that connect with audiences around the world, working with talented filmmakers, actors, and creative professionals.</p><br><p>Through innovation and a commitment to original storytelling, STX Movies has delivered a variety of successful films across multiple genres, providing audiences with memorable entertainment experiences both in theaters and through digital platforms.</p></div>
-      <div class="about-card"><h3>Movie Production & Distribution</h3><p>STX Movies specializes in developing and distributing feature films for global audiences. The company collaborates with creative talent and production partners to bring compelling stories to life, ensuring high production standards and wide-reaching distribution.</p><br><p>Its portfolio includes action, comedy, drama, thriller, and family-oriented films, helping establish STX Movies as a recognized name in the entertainment industry.</p></div>
-      <div class="about-card"><h3>Contact Us</h3><ul><li><span>Have questions about STX Movies, its productions, or upcoming releases? Our team is available to provide information and assistance.</span></li><li><span>For media inquiries, business partnerships, and general information, please visit the official STX Movies website or contact the appropriate department.</span></li><li><span>Stay connected to receive the latest news, movie announcements, and entertainment updates from STX Movies.</span></li></ul></div>
+      <div class="about-card">
+        <h3>About Us</h3>
+        <p>STX Movies is a global entertainment company dedicated to producing, financing, marketing, and distributing high-quality motion pictures and digital content. The company focuses on creating engaging stories that connect with audiences around the world, working with talented filmmakers, actors, and creative professionals.</p>
+        <br>
+        <p>Through innovation and a commitment to original storytelling, STX Movies has delivered a variety of successful films across multiple genres, providing audiences with memorable entertainment experiences both in theaters and through digital platforms.</p>
+      </div>
+      <div class="about-card">
+        <h3>Movie Production & Distribution</h3>
+        <p>STX Movies specializes in developing and distributing feature films for global audiences. The company collaborates with creative talent and production partners to bring compelling stories to life, ensuring high production standards and wide-reaching distribution.</p>
+        <br>
+        <p>Its portfolio includes action, comedy, drama, thriller, and family-oriented films, helping establish STX Movies as a recognized name in the entertainment industry.</p>
+      </div>
+      <div class="about-card">
+        <h3>Contact Us</h3>
+        <ul>
+          <li><span>Have questions about STX Movies, its productions, or upcoming releases? Our team is available to provide information and assistance.</span></li>
+          <li><span>For media inquiries, business partnerships, and general information, please visit the official STX Movies website or contact the appropriate department.</span></li>
+          <li><span>Stay connected to receive the latest news, movie announcements, and entertainment updates from STX Movies.</span></li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- ===== SUPPORT (unused, kept for nav) ===== -->
+<!-- ===================== PAGE 15: ONLINE SUPPORT ===================== -->
 <div class="page" id="page-support">
   <div class="top-bar">
     <button class="back-btn" onclick="showPage('page-home')">←</button>
     <div class="page-title">Online Support</div>
     <div></div>
   </div>
-</div>
-
-<!-- ===== CONTACT SUPPORT MODAL ===== -->
-<div class="modal-overlay" id="support-modal" onclick="closeSupportModalOutside(event)">
-  <div class="modal-box">
-    <div class="modal-title">Contact Support</div>
-    <button class="modal-btn" onclick="window.open('https://t.me/STXMovies','_blank')">
-      <span style="font-size:20px;">✈️</span> Telegram Channel
-    </button>
-    <button class="modal-btn" onclick="window.open('https://t.me/Nihal0511','_blank')">
-      <span style="font-size:20px;">🎧</span> Customer Support
-    </button>
-    <button class="modal-cancel" onclick="closeSupportModal()">CANCEL</button>
+  <div class="page-inner" style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;">
+    <div style="font-size:60px;margin-bottom:20px;">🎧</div>
+    <div style="font-size:18px;font-weight:700;margin-bottom:10px;">Customer Support</div>
+    <div style="color:var(--gray);font-size:14px;text-align:center;margin-bottom:30px;">Our support team is available 24/7 to help you with any questions.</div>
+    <div class="invite-action-card" style="width:100%;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div style="font-size:24px;">✈️</div>
+        <div class="ia-label">Telegram Support</div>
+      </div>
+      <button class="ia-btn">GO</button>
+    </div>
   </div>
 </div>
 
 <!-- TOAST -->
-<div id="toast" style="display:none;position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.85);color:white;padding:10px 20px;border-radius:20px;font-size:14px;z-index:999;backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.1);">Copied!</div>
+<div id="toast" style="display:none;position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.8);color:white;padding:10px 20px;border-radius:20px;font-size:14px;z-index:999;backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.1);">Copied!</div>
 
-<script>function showPage(id){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  var el=document.getElementById(id);
-  if(el)el.classList.add('active');
-  window.scrollTo(0,0);
+<script>
+// Page navigation
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const page = document.getElementById(id);
+  if (page) { page.classList.add('active'); window.scrollTo(0,0); }
 }
-function switchNav(el,id){showPage(id);}
-function togglePw(id){
-  var x=document.getElementById(id);
-  x.type=x.type==='password'?'text':'password';
+
+// Bottom nav switch (with page show)
+function switchNav(btn, pageId) {
+  const nav = btn.closest('.bottom-nav');
+  nav.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  btn.classList.add('active');
+  showPage(pageId);
 }
-function toggleCheck(id){
+
+// Toggle password
+function togglePw(id) {
+  const inp = document.getElementById(id);
+  inp.type = inp.type === 'password' ? 'text' : 'password';
+}
+
+// Toggle checkbox
+function toggleCheck(id) {
   document.getElementById(id).classList.toggle('checked');
 }
-function copyText(t){
-  navigator.clipboard.writeText(t);
-  var toast=document.getElementById('toast');
-  toast.style.display='block';
-  setTimeout(function(){toast.style.display='none'},2000);
-}
-function openSupportModal(){
-  document.getElementById('support-modal').classList.add('active');
-}
-function closeSupportModal(){
-  document.getElementById('support-modal').classList.remove('active');
-}
-function closeSupportModalOutside(e){
-  if(e.target===document.getElementById('support-modal'))closeSupportModal();
-}
-function selectAmount(el){
-  document.querySelectorAll('.amount-btn').forEach(function(b){b.classList.remove('active')});
+
+// Amount selection
+function selectAmount(el) {
+  document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
   el.classList.add('active');
 }
-function switchTab(el){
-  document.querySelectorAll('.tab-item').forEach(function(t){t.classList.remove('active')});
+
+// Tab switch
+function switchTab(el) {
+  el.closest('.tab-row').querySelectorAll('.tab-item').forEach(t => t.classList.remove('active'));
   el.classList.add('active');
 }
-function doSpin(){alert('No spins available!');}
-// ===== SLIDE IMAGES (base64 injected below) =====
-const SLIDE_IMAGES = [
-  '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
+
+// Copy text
+function copyText(txt) {
+  navigator.clipboard.writeText(txt).catch(() => {});
+  const toast = document.getElementById('toast');
+  toast.textContent = 'Copied: ' + txt.substring(0, 20) + (txt.length > 20 ? '...' : '');
+  toast.style.display = 'block';
+  setTimeout(() => toast.style.display = 'none', 2000);
+}
+
+// Lucky Draw spin
+function doSpin() {
+  const toast = document.getElementById('toast');
+  toast.textContent = 'You have 0 spins! Invite friends to get spins.';
+  toast.style.display = 'block';
+  setTimeout(() => toast.style.display = 'none', 2500);
+}
+
+// Banner auto-slide
+let slideIdx = 0;
+const slides = document.querySelectorAll('.banner-slide');
+if (slides.length) {
+  setInterval(() => {
+    slides[slideIdx].classList.remove('active');
+    slideIdx = (slideIdx + 1) % slides.length;
+    slides[slideIdx].classList.add('active');
+  }, 3500);
+}
+</script>
+</body>
+</html>
